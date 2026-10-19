@@ -1,110 +1,186 @@
-/* Estilos gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-
-
+    background-color: #f4f4f9;
+    color: #1a1a1a;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Cabeçalho */
 header {
-    background-color: chartreuse;
-
+    background-color: #0056b3;
+    color: #ffffff;
     text-align: center;
     padding: 20px;
 }
 
-.slogan {
+.titulo-site {
+    font-size: 2.2rem;
+    margin-bottom: 5px;
+}
 
+.slogan {
     margin-bottom: 10px;
+    font-size: 0.95em;
 }
 
 .acessibilidade button {
     margin: 5px;
-    padding: 5px 10px;
-    background-color: #fff;
-    border: none;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    color: #0056b3;
+    border: 2px solid #ffffff;
+    font-weight: bold;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.acessibilidade button:hover {
-    
+.acessibilidade button:hover,
+.acessibilidade button:focus {
+    background-color: #003d80;
+    color: #ffffff;
+    outline: 2px solid #ffcc00;
 }
 
-/* Menu de navegação */
 nav {
-    background-color: red;
+    background-color: #1a252f;
     text-align: center;
     padding: 10px;
 }
 
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 nav a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     margin: 0 10px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px;
 }
 
-nav a:hover {
-
+nav a:hover,
+nav a:focus {
+    color: #ffcc00;
+    text-decoration: underline;
 }
 
-/* Conteúdo principal */
 main {
     max-width: 800px;
     margin: 20px auto;
-    padding: 15px;
-    background-color: white;
+    padding: 20px;
+    background-color: #ffffff;
     border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 article {
     margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+article:last-child {
+    border-bottom: none;
 }
 
 article h2 {
-    color: purple; 
+    color: #0056b3;
+    margin-top: 0;
 }
 
-
-
-
-article img{                            
-    max-width: 150px;
+.data {
+    color: #555555;
+    font-size: 0.85em;
+    margin-bottom: 15px;
 }
 
+.destaque-noticia {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+}
 
+article img {
+    width: 200px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover;
+}
 
+article p {
+    margin-bottom: 12px;
+    text-align: justify;
+}
 
-
-/* Rodapé */
 footer {
-    background-color:darkgoldenrod;
-    color: peru;
+    background-color: #1a252f;
+    color: #ffffff;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     font-size: 0.9em;
 }
 
-
-
-/* Modo de alto contraste */
-.alto-contraste {
-    background-color: black !important;
-    color: white !important;
+body.alto-contraste {
+    background-color: #000000 !important;
+    color: #ffffff !important;
 }
 
-.alto-contraste header,
-.alto-contraste nav{
-    background-color: black !important;
-    color: yellow !important;
+body.alto-contraste header,
+body.alto-contraste nav,
+body.alto-contraste main,
+body.alto-contraste article,
+body.alto-contraste footer {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    box-shadow: none !important;
 }
 
-.alto-contraste a, 
-.alto-contraste h2, 
-.alto-contraste .data,
-.alto-contraste footer {
-    background-color: black !important;
-    color: white !important;
+body.alto-contraste h2,
+body.alto-contraste .data,
+body.alto-contraste p {
+    color: #ffffff !important;
+}
+
+body.alto-contraste nav a {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+    text-decoration: underline;
+}
+
+body.alto-contraste nav a:hover,
+body.alto-contraste nav a:focus {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+}
+
+body.alto-contraste .acessibilidade button {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+    border: 2px solid #ffff00 !important;
+}
+
+body.alto-contraste .acessibilidade button:hover,
+body.alto-contraste .acessibilidade button:focus {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+}
+
+body.alto-contraste article img {
+    border: 2px solid #ffff00;
 }
